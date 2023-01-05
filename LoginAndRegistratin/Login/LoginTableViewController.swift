@@ -42,6 +42,11 @@ class LoginTableViewController: UITableViewController {
     @IBAction func btnLoginClick(_ sender: UIButton) {
         validationForEmailPassword()
     }
+    @IBAction func btnSignupClick(_ sender: UIButton) {
+        if let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as? SignupViewController {
+            self.navigationController?.pushViewController(signUpVC, animated: true)
+        }
+    }
     
 }
 
