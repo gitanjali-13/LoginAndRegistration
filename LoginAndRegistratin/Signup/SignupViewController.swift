@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class SignupViewController: UITableViewController {
 
@@ -36,31 +38,37 @@ class SignupViewController: UITableViewController {
     @IBAction func btnSignUp(_ sender: UIButton) {
         let imgSystem = UIImage(systemName: "person.crop.circle.badge.plus")
         
+        //firebase auth
         if imgProfile.image?.pngData() != imgSystem?.pngData() {
             //profile image select
             if let email = txtEmailId.text, let password = txtPassword.text, let userName = txtUsername.text, let confirmPassword = txtConfirmPassword.text{
                 
                 if userName == "" {
                     print("please enter username")
-                }else if !email.validateEmailId(){
+                } else if !email.validateEmailId() {
                     
                     openAlert(title: "title", message: "Enter valid Email", alertStyle: .alert, actionTitle: ["Ok"], actionStyle: [.default], actions: [{_ in }])
-                        print("Email not valid")
-                 } else if !password.validatePassword(){
-                    print("Password not valid")
+                    print("Email is not valid")
+                    
+                 } else if !password.validatePassword() {
+                     //added
+//                     openAlert(title: "title", message: "Enter valid Email", alertStyle: .alert, actionTitle: ["Ok"], actionStyle: [.default], actions: [{_ in }])
+                     
+                    print("Password is not valid")
+                     
                  } else {
                         if confirmPassword == "" {
                         print("please confirm password")
                         } else {
-                        if password == confirmPassword {
+                            if password == confirmPassword {
                             //navigation code
-                            print("navigation")
-                        } else {
+                            print("navigation code")
+                            } else {
                             print("password does not match")
                         }
                     }
                 }
-            }else {
+            } else {
                 print("Please check your details.")
             }
         } else {

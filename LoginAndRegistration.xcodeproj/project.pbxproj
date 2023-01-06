@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11272CE2A21A50437C18C8A7 /* Pods_LoginAndRegistration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF080549D0630FC4ADBDA6E /* Pods_LoginAndRegistration.framework */; };
+		849346E329688E2A0054F911 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849346E229688E2A0054F911 /* GoogleService-Info.plist */; };
 		849348C729673CD200319006 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849348C629673CD200319006 /* Extension+String.swift */; };
 		849348CA2967459B00319006 /* UiAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849348C92967459B00319006 /* UiAlertController+Extension.swift */; };
 		849348CC296750A900319006 /* UiViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849348CB296750A900319006 /* UiViewController+Extension.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		16191A3A7169DBA4FA296642 /* Pods-LoginAndRegistration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAndRegistration.release.xcconfig"; path = "Target Support Files/Pods-LoginAndRegistration/Pods-LoginAndRegistration.release.xcconfig"; sourceTree = "<group>"; };
 		5F8BCD3B24AC92BEBAC0EFE4 /* Pods-LoginAndRegistration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAndRegistration.debug.xcconfig"; path = "Target Support Files/Pods-LoginAndRegistration/Pods-LoginAndRegistration.debug.xcconfig"; sourceTree = "<group>"; };
+		849346E229688E2A0054F911 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		849348C629673CD200319006 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		849348C92967459B00319006 /* UiAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiAlertController+Extension.swift"; sourceTree = "<group>"; };
 		849348CB296750A900319006 /* UiViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -129,14 +131,15 @@
 		84BD78E92965ECC70033574F /* LoginAndRegistratin */ = {
 			isa = PBXGroup;
 			children = (
+				849348C829673CDB00319006 /* Extensions */,
 				849348D029675AB200319006 /* Login */,
 				849348D129675AC200319006 /* Signup */,
 				849348CE296755AB00319006 /* Support Files */,
 				849348CD2967558200319006 /* Controllers */,
-				849348C829673CDB00319006 /* Extensions */,
 				849348CF2967565F00319006 /* Views */,
 				84BD78F32965ECCA0033574F /* Assets.xcassets */,
 				84BD78F52965ECCA0033574F /* LaunchScreen.storyboard */,
+				849346E229688E2A0054F911 /* GoogleService-Info.plist */,
 				84BD78F82965ECCA0033574F /* Info.plist */,
 			);
 			path = LoginAndRegistratin;
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BD78F72965ECCA0033574F /* LaunchScreen.storyboard in Resources */,
+				849346E329688E2A0054F911 /* GoogleService-Info.plist in Resources */,
 				84BD78F42965ECCA0033574F /* Assets.xcassets in Resources */,
 				84BD78F22965ECC70033574F /* Main.storyboard in Resources */,
 			);
