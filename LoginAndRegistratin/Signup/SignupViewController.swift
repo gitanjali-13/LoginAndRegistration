@@ -1,0 +1,104 @@
+//
+//  SignupViewController.swift
+//  LoginAndRegistration
+//
+//  Created by Admin on 06/01/23.
+//
+
+import UIKit
+
+class SignupViewController: UITableViewController {
+
+    @IBOutlet weak var imgProfile: UIImageView!
+    
+    @IBOutlet weak var txtUsername: UITextField!
+    
+    @IBOutlet weak var txtEmailId: UITextField!
+    
+    @IBOutlet weak var txtPassword: UITextField!
+    
+    @IBOutlet weak var txtConfirmPassword: UITextField!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer: )))
+        
+        //imgProfile.isUserInteractionEnabled = true
+        imgProfile.addGestureRecognizer(tapGesture)
+        
+
+    }
+    @objc func imageTapped(tapGestureRecognizer : UITapGestureRecognizer) {
+        openGallery()
+    }
+    
+    @IBAction func btnSignUp(_ sender: UIButton) {
+        let imgSystem = UIImage(systemName: "person.crop.circle.badge.plus")
+        
+        if imgProfile.image?.pngData() != imgSystem?.pngData() {
+            //profile image select
+            if let email = txtEmailId.text, let password = txtPassword.text, let userName = txtUsername.text, let confirmPassword = txtConfirmPassword.text{
+                
+                if userName == "" {
+                    print("please enter username")
+                }else if !email.validateEmailId(){
+                    
+                    openAlert(title: "title", message: "Enter valid Email", alertStyle: .alert, actionTitle: ["Ok"], actionStyle: [.default], actions: [{_ in }])
+                        print("Email not valid")
+                 } else if !password.validatePassword(){
+                    print("Password not valid")
+                 } else {
+                        if confirmPassword == "" {
+                        print("please confirm password")
+                        } else {
+                        if password == confirmPassword {
+                            //navigation code
+                            print("navigation")
+                        } else {
+                            print("password does not match")
+                        }
+                    }
+                }
+            }else {
+                print("Please check your details.")
+            }
+        } else {
+            print("please select profile picture")
+    }
+}
+    
+    @IBAction func btnLoginClick(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    // for small screen devices set screen heigth to display all content without scrolling
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UIScreen.main.bounds.height
+//    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let tableViewsHeight = self.tableView.frame.height
+        let contentHeight = self.tableView.contentSize.height
+        let centeringInset = (tableViewsHeight - contentHeight) / 2.0
+        let topInset = max(centeringInset, 0.0)
+        self.tableView.contentInset = UIEdgeInsets(top: topInset, left: 0.0, bottom: 0.0, right: 0.0)
+    }
+}
+
+extension SignupViewController : UINavigationControllerDelegate ,UIImagePickerControllerDelegate {
+    func openGallery(){
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = .savedPhotosAlbum
+            present(picker, animated: true)
+        }
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let img = info[.originalImage] as?UIImage {
+            imgProfile.image = img
+        }
+        dismiss(animated: true)
+    }
+    
+}
