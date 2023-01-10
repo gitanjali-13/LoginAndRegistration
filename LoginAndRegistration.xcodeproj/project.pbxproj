@@ -65,16 +65,9 @@
 			children = (
 				849348C629673CD200319006 /* Extension+String.swift */,
 				849348C92967459B00319006 /* UiAlertController+Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		849348CD2967558200319006 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
 				849348CB296750A900319006 /* UiViewController+Extension.swift */,
 			);
-			path = Controllers;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		849348CE296755AB00319006 /* Support Files */ = {
@@ -135,7 +128,6 @@
 				849348D029675AB200319006 /* Login */,
 				849348D129675AC200319006 /* Signup */,
 				849348CE296755AB00319006 /* Support Files */,
-				849348CD2967558200319006 /* Controllers */,
 				849348CF2967565F00319006 /* Views */,
 				84BD78F32965ECCA0033574F /* Assets.xcassets */,
 				84BD78F52965ECCA0033574F /* LaunchScreen.storyboard */,

@@ -100,14 +100,15 @@
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="WyI-oo-86r" userLabel="social Stack View">
-                                                    <rect key="frame" x="34" y="631.66666666666663" width="325" height="50"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WyI-oo-86r" userLabel="social Stack View">
+                                                    <rect key="frame" x="30" y="621.66666666666663" width="333" height="60"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwD-wC-eOt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwD-wC-eOt" customClass="FBSDKLoginButton">
+                                                            <rect key="frame" x="0.0" y="0.0" width="156.66666666666666" height="60"/>
                                                             <color key="backgroundColor" red="0.26811893339999998" green="0.52054681899999999" blue="0.69499380960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="80B-gD-T2J"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="OIw-dC-ijy"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="kAR-G2-1fv"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
@@ -116,7 +117,7 @@
                                                             </buttonConfiguration>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOS-Kw-yJ5">
-                                                            <rect key="frame" x="175" y="0.0" width="150" height="50"/>
+                                                            <rect key="frame" x="176.66666666666663" y="0.0" width="156.33333333333337" height="60"/>
                                                             <color key="backgroundColor" red="0.61647790670000002" green="0.31513890259999999" blue="0.21133471030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="Google">
@@ -125,12 +126,14 @@
                                                         </button>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="7Lj-1h-r2e"/>
                                                         <constraint firstItem="ZOS-Kw-yJ5" firstAttribute="height" secondItem="vwD-wC-eOt" secondAttribute="height" id="PbV-G5-TWc"/>
+                                                        <constraint firstAttribute="height" constant="60" id="TcV-3U-QbB"/>
                                                         <constraint firstItem="ZOS-Kw-yJ5" firstAttribute="width" secondItem="vwD-wC-eOt" secondAttribute="width" id="pcI-78-Zht"/>
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- or connect with -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmp-cr-ccF">
-                                                    <rect key="frame" x="127" y="588.33333333333337" width="139" height="23.333333333333371"/>
+                                                    <rect key="frame" x="127" y="578.33333333333337" width="139" height="23.333333333333371"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -142,8 +145,10 @@
                                                 <constraint firstItem="i0C-4N-Xc7" firstAttribute="centerX" secondItem="baw-UJ-fVn" secondAttribute="centerX" id="7K5-Tv-dXk"/>
                                                 <constraint firstItem="XHD-Lq-qBC" firstAttribute="trailing" secondItem="9dW-cg-9lU" secondAttribute="trailing" id="9si-ga-77b"/>
                                                 <constraint firstItem="XHD-Lq-qBC" firstAttribute="leading" secondItem="9dW-cg-9lU" secondAttribute="leading" id="9xM-0T-yLv"/>
+                                                <constraint firstItem="WyI-oo-86r" firstAttribute="leading" secondItem="baw-UJ-fVn" secondAttribute="leading" constant="30" id="AEA-41-mWc"/>
                                                 <constraint firstItem="XHD-Lq-qBC" firstAttribute="height" secondItem="9dW-cg-9lU" secondAttribute="height" id="EGT-wE-mtg"/>
                                                 <constraint firstItem="69R-pP-pDs" firstAttribute="top" secondItem="baw-UJ-fVn" secondAttribute="top" constant="60" id="ESS-Wt-wNb"/>
+                                                <constraint firstAttribute="trailing" secondItem="WyI-oo-86r" secondAttribute="trailing" constant="30" id="FeQ-Bw-cMP"/>
                                                 <constraint firstItem="r7d-Ig-We4" firstAttribute="leading" secondItem="baw-UJ-fVn" secondAttribute="leading" constant="30" id="GBQ-ht-Rdg"/>
                                                 <constraint firstItem="WyI-oo-86r" firstAttribute="centerX" secondItem="baw-UJ-fVn" secondAttribute="centerX" id="OfP-nK-u8A"/>
                                                 <constraint firstItem="yoZ-eI-qSM" firstAttribute="trailing" secondItem="i0C-4N-Xc7" secondAttribute="trailing" id="Oqg-zI-PPd"/>
@@ -179,6 +184,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Lue-zf-48E"/>
                     <connections>
+                        <outlet property="buttonFacebook" destination="vwD-wC-eOt" id="LGK-10-Shl"/>
                         <outlet property="txtEmail" destination="9dW-cg-9lU" id="Sey-JZ-CDO"/>
                         <outlet property="txtPassword" destination="XHD-Lq-qBC" id="L6i-ex-Owy"/>
                     </connections>

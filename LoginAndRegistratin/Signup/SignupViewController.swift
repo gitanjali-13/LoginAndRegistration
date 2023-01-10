@@ -36,32 +36,34 @@ class SignupViewController: UITableViewController {
     }
     
     @IBAction func btnSignUp(_ sender: UIButton) {
+        
         let imgSystem = UIImage(systemName: "person.crop.circle.badge.plus")
         
-        //firebase auth
         if imgProfile.image?.pngData() != imgSystem?.pngData() {
-            //profile image select
+            // select profile image
             if let email = txtEmailId.text, let password = txtPassword.text, let userName = txtUsername.text, let confirmPassword = txtConfirmPassword.text{
                 
                 if userName == "" {
                     print("please enter username")
+                    
                 } else if !email.validateEmailId() {
                     
                     openAlert(title: "title", message: "Enter valid Email", alertStyle: .alert, actionTitle: ["Ok"], actionStyle: [.default], actions: [{_ in }])
                     print("Email is not valid")
                     
                  } else if !password.validatePassword() {
-                     //added
-//                     openAlert(title: "title", message: "Enter valid Email", alertStyle: .alert, actionTitle: ["Ok"], actionStyle: [.default], actions: [{_ in }])
-                     
-                    print("Password is not valid")
+                     openAlert(title: "title", message: "Enter valid password", alertStyle: .alert, actionTitle: ["Ok"], actionStyle: [.default], actions: [{_ in }])
+                     print("Password is not valid")
                      
                  } else {
                         if confirmPassword == "" {
                         print("please confirm password")
                         } else {
                             if password == confirmPassword {
-                            //navigation code
+                            
+                                //navigation code
+                                
+                                
                             print("navigation code")
                             } else {
                             print("password does not match")
@@ -72,7 +74,7 @@ class SignupViewController: UITableViewController {
                 print("Please check your details.")
             }
         } else {
-            print("please select profile picture")
+            openAlert(title: "title", message: "Please select profile picture", alertStyle: .alert, actionTitle: ["Ok"], actionStyle: [.default], actions: [{_ in }])
     }
 }
     
@@ -93,16 +95,17 @@ class SignupViewController: UITableViewController {
     }
 }
 
-extension SignupViewController : UINavigationControllerDelegate ,UIImagePickerControllerDelegate {
-    func openGallery(){
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+    extension SignupViewController : UINavigationControllerDelegate ,UIImagePickerControllerDelegate {
+        
+        func openGallery(){
+            if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
             let picker = UIImagePickerController()
             picker.delegate = self
             picker.sourceType = .savedPhotosAlbum
             present(picker, animated: true)
+            }
         }
-    }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[.originalImage] as?UIImage {
             imgProfile.image = img
         }
